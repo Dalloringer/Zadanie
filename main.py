@@ -2,9 +2,6 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 import flet as ft
 
-FMT = "%d.%m.%Y %H:%M:%S"
-REPORT_FILE = "report.txt"
-
 COLORS = getattr(ft, "Colors", None) or getattr(ft, "colors")
 OptionCls = getattr(ft, "DropdownOption", None) or ft.dropdown.Option
 
