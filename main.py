@@ -1,5 +1,3 @@
-"""Простой журнал входов на Flet. Все требования ООП соблюдены."""
-
 from abc import ABC, abstractmethod
 from datetime import datetime
 import flet as ft
@@ -12,7 +10,6 @@ OptionCls = getattr(ft, "DropdownOption", None) or ft.dropdown.Option
 
 
 class MyMap:
-    """Простая замена словаря (dict запрещён условием)."""
 
     def __init__(self):
         self._items = []          
@@ -177,8 +174,6 @@ class MainColumn(ft.Column):
         super().__init__(controls, spacing=10,
                          horizontal_alignment=ft.CrossAxisAlignment.CENTER)
 
-
-# ============ 5. Приложение ============
 class App(Entity):
     def __init__(self, page):
         self._page = page
@@ -192,7 +187,11 @@ class App(Entity):
     def _seed(self):
         """10 пользовательских объектов в коллекции MyMap."""
         data = [
-            ("admin", "admin123", "Админ"), ("User", "user123", "User")
+            ("admin", "admin123", "Админ"),   ("ivanov", "ivan123", "Менеджер"),
+            ("petrov", "petr123", "Разработчик"), ("sidorov", "sid123", "Тестировщик"),
+            ("kuznetsova", "kuz123", "Аналитик"), ("smirnov", "smir123", "Developer"),
+            ("volkova", "vol123", "Дизайнер"),    ("morozov", "mor123", "Бухгалтер"),
+            ("novikov", "nov123", "Программист"),          ("fedorova", "fed123", "Тимлид"),
         ]
         for login, pwd, role in data:
             self._users.set(login, User(login, pwd, role))
